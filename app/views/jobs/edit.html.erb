@@ -1,0 +1,22 @@
+
+<%= form_for [@company, @job] do |f| %>
+  <p>
+    <%= f.label :title, 'Title:' %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description, 'Desc:' %>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :level_of_interest, 'LoI:' %>
+    <%= f.number_field :level_of_interest %>
+  </p>
+  <p>
+    <%= f.label :city, 'City:' %>
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.submit 'Submit'%>
+  </p>
+<% end %>  

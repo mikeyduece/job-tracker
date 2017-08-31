@@ -2,8 +2,9 @@ FactoryGirl.define do
   
   factory :company do
     sequence :name do |n|
-      "#{n}Comany"
+      "#{n}Company"
     end
+  
   end
     
   factory :job do
