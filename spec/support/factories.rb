@@ -16,4 +16,10 @@ FactoryGirl.define do
     city "Denver"
     company
   end
+  
+  factory :category do
+    sequence :title do |n|
+      title "#{n}MyString"
+    end
+  end
 end
