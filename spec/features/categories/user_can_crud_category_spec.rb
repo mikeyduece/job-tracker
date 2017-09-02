@@ -55,7 +55,9 @@ RSpec.feature "User" do
     
     visit new_company_job_path(company)
     click_on('New Category')
+    fill_in('Title:', with: "Supervisor")
+    click_on('Submit')
     
-    expect(current_path).to eq(new_category_path)
+    expect(page).to have_content('Supervisor')
   end
 end
