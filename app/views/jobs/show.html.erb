@@ -10,11 +10,15 @@ Level of Interest: <%= @job.level_of_interest %>
 City: <%= @job.city %>
 <br>
 
-Category: <%= @job.category.title %>
+Category: <% if @job.category_id.nil? %>
+            <%= link_to 'Assign Category', edit_company_job_path(@job.company, @job) %>
+          <% else %>
+            <%= link_to @job.category.title, category_path(@job.category) %>
+          <% end %>
 <br>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
-
-<%= link_to 'Edit Job Record', edit_company_job_path(@job.company) %>
-<%= link_to "Delete Job Record", company_job_path(@job.company), method: :delete %>
+<br>
+<button type="button" name="button"><%= link_to 'Edit Job Record', edit_company_job_path(@job.company) %></button><br>
+<button type="button" name="button"><%= link_to "Delete Job Record", company_job_path(@job.company), method: :delete %></button>
 

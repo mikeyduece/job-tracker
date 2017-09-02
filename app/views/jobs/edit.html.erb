@@ -16,6 +16,11 @@
     <%= f.label :city, 'City:' %>
     <%= f.text_field :city %>
   </p>
+  
+  <p>  <%= f.label :category %>
+    <%= f.collection_select :category_id, Category.all, :id, :title %>
+  </p>
+  
   <p>
     <%= f.submit 'Submit'%>
   </p>
