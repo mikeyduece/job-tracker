@@ -4,9 +4,9 @@ FactoryGirl.define do
     sequence :name do |n|
       "#{n}Company"
     end
-  
   end
-    
+  
+  
   factory :job do
     sequence :title do |n|
       "#{n}JobTitle"
@@ -25,4 +25,17 @@ FactoryGirl.define do
       "#{n}MyString"
     end
   end
+  
+  # factory :comment do
+  #   sequence :body do |n|
+  #     "Test Comment#{n}"
+  #   end
+  # end
 end
+
+
+
+
+
+
+

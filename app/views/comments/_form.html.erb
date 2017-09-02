@@ -1,0 +1,6 @@
+<h5>Post a Comment</h5>
+
+  <%= form_for [@job.company, @job, @comment] do |f| %>
+      <%= f.text_area :body %><br>
+      <%= f.submit %><br><br>
+    <% end %>

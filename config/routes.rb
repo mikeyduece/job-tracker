@@ -2,11 +2,10 @@ Rails.application.routes.draw do
   root to: 'companies#index'
   
   resources :companies do
-    resources :jobs do 
-      resources :comments
+    resources :jobs do
+      resources :comments, only: [:create]
     end
   end
-    
   resources :categories
   
   # The priority is based upon order of creation: first created -> highest priority.
