@@ -1,6 +1,10 @@
 <h1>Category Index</h1>
 <ul>
   <% @categories.each do |category| %>
-    <li> <%= category.title %></li>
+    <li> 
+      <%= link_to category.title, category_path(category) %>
+      <button><%= link_to "Delete", category_path(category), method: :delete %></button>
+    </li>
+    
   <% end %>
 </ul>

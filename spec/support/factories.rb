@@ -8,18 +8,21 @@ FactoryGirl.define do
   end
     
   factory :job do
-    title "Job title"
+    sequence :title do |n|
+      "#{n}JobTitle"
+    end
     description "Job description"
     sequence :level_of_interest do |i|
       i
     end
     city "Denver"
     company
+    category
   end
   
   factory :category do
     sequence :title do |n|
-      title "#{n}MyString"
+      "#{n}MyString"
     end
   end
 end
