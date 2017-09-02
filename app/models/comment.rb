@@ -2,10 +2,10 @@ class Comment < ApplicationRecord
   belongs_to :job
   
   def created
-    Date.strptime(self.created_at.to_s, "%Y-%m-%d %H:%M:%S %Z")
+    self.created_at.strftime("%F %H:%M")
   end
   
   def updated
-    Date.strptime(self.updated_at.to_s, "%Y-%m-%d %H:%M:%S %Z")
+    self.updated_at.strftime("%F %H:%M")
   end
 end
