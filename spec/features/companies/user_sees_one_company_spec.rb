@@ -7,7 +7,7 @@ describe "User sees one company" do
     company.jobs.create!(title: "Developer", level_of_interest: 90, city: "Denver",
                           category_id: 1)
 
-    visit company_path(company)
+    visit company_jobs_path(company)
 
     expect(current_path).to eq("/companies/#{company.id}/jobs")
     expect(page).to have_content("ESPN")
