@@ -1,0 +1,6 @@
+<h3>Contacts:</h3>
+<ul>
+<h5><% @company.contacts.each do |contact| %></h5>
+  <li><stong>Name:</stong> <%= contact.full_name %><br> <stong>Position:</stong> <%= contact.position %><br> <stong>Email:</stong> <%= mail_to contact.email %></li>
+<% end %>
+</ul>
