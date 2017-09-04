@@ -1,6 +1,14 @@
 class JobsController < ApplicationController
   def index
-    @jobs = Job.company_jobs_index
+    if params[:sort]
+      @jobs = Job.sort(params[:sort])
+    elsif params[:location]
+      @jobs = Job.by_city(params[:location])
+    elsif params[:controller] == 'jobs'
+      @jobs = Job.all
+    else
+      @jobs = Job.company_jobs_index
+    end
   end
 
   def new
@@ -42,10 +50,15 @@ class JobsController < ApplicationController
     @job.destroy
     redirect_to company_path(@job.company)
   end
+  
+  def dashboard
+    @job_level_count = Job.level_count
+    @top_companies   = Company.top_three_companies
+  end
 
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id)
+    params.require(:job).permit(:title, :description, :level_of_interest, :city)
   end
 end

@@ -1,0 +1,24 @@
+<h3>Level of Interest List</h3>
+
+<div class="">
+  <ul>
+    <% @job_level_count.each_pair do |loi, count| %>
+      <li> <%= "#{loi}: #{count}" %> </li>
+      <% end %>
+  </ul>
+</div>
+
+<div class="">
+  <table>
+    <tr>
+      <th>Company</th>
+      <th>Average Level of Interest</th>
+    <% @top_companies.each do |company| %>
+    <tr>
+      <td> <%= company.name %> </td>
+      <td> <%= company.avg %></td>
+    </tr>
+      <% end %>
+  
+  </table>
+</div>

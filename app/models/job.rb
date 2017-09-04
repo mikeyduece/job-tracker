@@ -5,6 +5,23 @@ class Job < ApplicationRecord
   has_many :comments
   
   def self.company_jobs_index
-    Company.find(job.company_id).jobs
+    Company.find(:company_id).jobs
   end
+  
+  def self.sort(params)
+    if params == 'location'
+      order(:city)
+    elsif params == 'interest'
+      order(:level_of_interest).reverse
+    end
+  end
+  
+  def self.level_count
+    self.group(:level_of_interest).order('level_of_interest DESC').count(:level_of_interest)
+  end
+  
+  def self.by_city(params)
+    where(city: params)
+  end  
+  
 end
