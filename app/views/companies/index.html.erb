@@ -1,13 +1,13 @@
-<h1 style='font-size:4vw;'>All Companies</h1>
+<h1 style='font-size:4vw; text-align:center;'>All Companies</h1>
   
   <div class="text-center" style='display:flex;'>
-    <div class="flex-direction: row">
+    <div class="flex-direction: row" style="justify-content: center">
       
     <% @companies.each do |company| %>
     <ul class=' list-group company_<%= "#{company.id}" %>' style='flex-wrap:wrap;'>
         <li class='list-group-item' style='font-size: 3vw;'><%=link_to company.name, company_path(company) %></li>
-        <button type='button' class='btn-xs'><%= link_to "Edit", edit_company_path(company) %></button>
-        <button type='button' class='btn-xs'><%= link_to "Delete", company_path(company), method: :delete %></button><br>
+        <button class='btn-xs'><%= link_to "Edit", edit_company_path(company) %></button>
+        <button class='btn-xs'><%= link_to "Delete", company_path(company), method: :delete %></button><br>
     </ul>
     <% end %>
 

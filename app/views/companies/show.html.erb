@@ -1,10 +1,21 @@
-All Jobs for <strong><%= @company.name %></strong>
+<strong style='font-size:5vw;'>All Jobs for <%= @company.name %></strong>
+<button class='btn btn-default'>
+  <%= link_to 'New Job', new_company_job_path(@company, @job) %>
+</button>
 
-<% @company.jobs.each do |job| %>
-  <ul><%= link_to job.title, company_job_path(@company, job) %></ul>
-<% end %>
-<%= link_to 'New Job', new_company_job_path(@company, @job) %>
-
-<%= render partial: 'companies/contact' %>
-<%= render partial: 'contacts/form' %><br>
-<%= link_to '<< Back to Companies', companies_path %>
+<div class="well well-sm text-center" style='background-color:darkgrey; display:flex;margin-right:20vw;'>
+  <div class="flex-direction: row" style="justify-content: left; font-size:3em;">
+    <% @company.jobs.each do |job| %>
+      <ul><%= link_to job.title, company_job_path(@company, job) %></ul>
+    <% end %>
+  </div>
+</div>
+<span>
+  <%= render partial: 'companies/contact' %>
+</span>
+<span>
+  <%= render partial: 'contacts/form' %>
+</span>
+<span>
+  <%= link_to '<< Back to Companies', companies_path %>
+</span>
