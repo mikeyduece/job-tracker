@@ -28,19 +28,19 @@ class JobsController < ApplicationController
   end
 
   def show
-    @job = Job.find(params[:id])
+    @job     = Job.find(params[:id])
     @comment = Comment.new
     @comment.job_id = @job.id
   end
 
   def edit
     @company = Company.find(params[:company_id])
-    @job = Job.find(params[:id])
+    @job     = Job.find(params[:id])
   end
 
   def update
     @company = Company.find(params[:company_id])
-    @job = Job.find(params[:id])
+    @job     = Job.find(params[:id])
     @job.update(job_params)
     redirect_to company_job_path(@company, @job)
   end

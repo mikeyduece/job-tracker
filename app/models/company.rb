@@ -5,9 +5,10 @@ class Company < ApplicationRecord
   
   
   def self.top_three_companies
-    self.select('companies.name, avg(jobs.level_of_interest) AS avg')
+    select('companies.name, avg(jobs.level_of_interest) AS avg')
       .joins(:jobs)
-      .group('companies.id').order('avg DESC')
+      .group('companies.id')
+      .order('avg DESC')
       .limit(3)
   end
 end

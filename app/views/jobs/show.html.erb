@@ -19,6 +19,7 @@ Category: <% if @job.category_id.nil? %>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
 <br>
+<h4>Comments:</h4>
 <%= render partial: 'jobs/comment', collection: @job.comments.reverse %>
 <%= render partial: 'comments/form' %>
 <button><%= link_to 'Edit', edit_company_job_path(@job.company, @job) %></button>

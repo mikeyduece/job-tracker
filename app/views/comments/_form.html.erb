@@ -1,6 +1,8 @@
 <h5>Post a Comment</h5>
-
+<div class="form-group" style='margin-right:75vw;overflow:auto;'>
+  
   <%= form_for [@job.company, @job, @comment] do |f| %>
-      <%= f.text_area :body %><br>
+      <%= f.text_area :body, class: 'form-control', row: '5', id: 'comment' %><br>
       <%= f.submit %><br><br>
     <% end %>
+</div>

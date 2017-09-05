@@ -17,7 +17,7 @@ class Job < ApplicationRecord
   end
   
   def self.level_count
-    self.group(:level_of_interest).order('level_of_interest DESC').count(:level_of_interest)
+    group(:level_of_interest).order('level_of_interest DESC').count
   end
   
   def self.by_city(params)
